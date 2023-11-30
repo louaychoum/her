@@ -8,5 +8,6 @@ var config = {
         "You're my favourite person",
         "You're my favourite smile",
     ],
+    date: "2023-12-31T00:00:00",
     names: ["Yasmin"]
 }
