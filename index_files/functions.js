@@ -1,8 +1,3 @@
-/*
- * http://love.hackerzhou.me
- */
-
-// variables
 var $win = $(window);
 var clientWidth = $win.width();
 var clientHeight = $win.height();
@@ -52,6 +47,6 @@ function timeElapse(date){
 	}
 	seconds = Math.floor(seconds % 60);
 	seconds = (seconds + "").replace(/\.\d*/, "");
-	var result = "<span class=\"digit\">" + days + "</span> days <span class=\"digit\">" + hours + "</span> hours <span class=\"digit\">" + minutes + "</span> minutes <span class=\"digit\">" + seconds + "</span> seconds";
+	var result = "<span class=\"digit\">" + Math.abs(days) + "</span> days <span class=\"digit\">" + Math.abs(hours) + "</span> hours <span class=\"digit\">" + Math.abs(minutes) + "</span> minutes <span class=\"digit\">" + Math.abs(seconds) + "</span> seconds";
 	$("#clock").html(result);
 }
