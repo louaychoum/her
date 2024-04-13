@@ -1,12 +1,12 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Yasmin ❤️</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap"
       rel="stylesheet"
     />
     <link type="text/css" rel="stylesheet" href="./index_files/default.css" />
@@ -344,22 +344,60 @@
 
         runAsync().start();
       })();
-    </script>
+      document.addEventListener("DOMContentLoaded", function () {
+        function openOverlay() {
+          document
+            .querySelector(".custom-model-main")
+            .classList.add("model-open");
+        }
 
-    <!-- <div class="card">
-      <div class="card-preview">
-        <img
-          class="img"
-          src="https://drive.google.com/file/d/1bKt8skYep3Sd8kB3Oe7mQonuOaX3NU2o/view?usp=sharing"
-        />
-      </div>
-      <div class="card-header">
-        <div class="content">
-          <div class="title"></div>
-          <span class="subtitle"></span>
+        document
+          .querySelectorAll(".close-btn, .bg-overlay")
+          .forEach(function (element) {
+            element.addEventListener("click", function () {
+              console.log("clicked");
+              document
+                .querySelector(".custom-model-main")
+                .classList.remove("model-open");
+            });
+          });
+
+        document
+          .querySelector(".button-82-pushable")
+          .addEventListener("click", openOverlay);
+      });
+    </script>
+    <div class="marry">
+      <button class="button-82-pushable" role="button">
+        <span class="button-82-shadow"></span>
+        <span class="button-82-edge"></span>
+        <span class="button-82-front text"> Marry Me? </span>
+      </button>
+    </div>
+    <div class="custom-model-main">
+      <div class="custom-model-inner">
+        <div class="close-btn">×</div>
+        <div class="custom-model-wrap">
+          <div class="pop-up-content-wrap">
+            <div class="card">
+              <div class="card-preview">
+                <img
+                  class="img"
+                  src="https://drive.google.com/file/d/1bKt8skYep3Sd8kB3Oe7mQonuOaX3NU2o/view?usp=sharing"
+                />
+              </div>
+              <div class="card-header">
+                <div class="content">
+                  <div class="title"></div>
+                  <span class="subtitle"></span>
+                </div>
+              </div>
+              <div class="card-footer"></div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="card-footer"></div>
-    </div> -->
+      <div class="bg-overlay"></div>
+    </div>
   </body>
 </html>
