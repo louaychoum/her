@@ -345,6 +345,9 @@
         runAsync().start();
       })();
       document.addEventListener("DOMContentLoaded", function () {
+        var imgElement;
+        var videoElement;
+
         function openOverlay() {
           document
             .querySelector(".custom-model-main")
@@ -359,12 +362,37 @@
               document
                 .querySelector(".custom-model-main")
                 .classList.remove("model-open");
+              if (imgElement && videoElement) {
+                videoElement.replaceWith(imgElement);
+                imgElement = null;
+                videoElement = null;
+              }
             });
           });
 
         document
           .querySelector(".button-82-pushable")
           .addEventListener("click", openOverlay);
+
+        document.querySelectorAll(".card-footer").forEach(function (element) {
+          element.addEventListener("click", function () {
+            if (!imgElement) {
+              imgElement = this.parentElement.querySelector("img");
+              if (imgElement) {
+                videoElement = document.createElement("video");
+                videoElement.src = "./index_files/yasv.mp4"; // replace with your video source
+                videoElement.controls = true;
+                videoElement.style.width = "100%";
+                videoElement.style.height = "100%";
+                imgElement.replaceWith(videoElement);
+              }
+            } else {
+              videoElement.replaceWith(imgElement);
+              imgElement = null;
+              videoElement = null;
+            }
+          });
+        });
       });
     </script>
     <div class="marry">
@@ -381,18 +409,14 @@
           <div class="pop-up-content-wrap">
             <div class="card">
               <div class="card-preview">
-                <img
-                  class="img"
-                  src="https://drive.google.com/file/d/1bKt8skYep3Sd8kB3Oe7mQonuOaX3NU2o/view?usp=sharing"
-                />
+                <img class="img" src="./index_files/yasi.jpeg" />
               </div>
               <div class="card-header">
                 <div class="content">
-                  <div class="title"></div>
-                  <span class="subtitle"></span>
+                  <div class="title">Yayyy!</div>
                 </div>
               </div>
-              <div class="card-footer"></div>
+              <div class="card-footer">One More Thing</div>
             </div>
           </div>
         </div>
