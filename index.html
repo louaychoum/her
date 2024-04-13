@@ -37,14 +37,6 @@
       charset="utf-8"
     ></script>
     <script type="text/javascript" src="./config.js"></script>
-    <style type="text/css">
-      <!--
-      .STYLE1 {
-          color: #666666
-      }
-
-      -->
-    </style>
   </head>
   <body>
     <img
@@ -52,6 +44,11 @@
       style="position: fixed; z-index: 10001; top: 10px; right: 10px"
       onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}"
     />
+    <audio
+      id="szaAudio"
+      src="./index_files/sza.mp3"
+      style="display: none"
+    ></audio>
     <audio
       class="song-audio-autoplay"
       controls
@@ -112,16 +109,6 @@
     </div>
 
     <script type="text/javascript">
-      $("#code").html(
-        config.lines
-          .map((item) => {
-            return `<span class="say">${item}</span><br>
-						`;
-          })
-          .reduce((a, b) => {
-            return a + b;
-          })
-      );
       $("#clock-box-inside-text").html(`Tick-Tock: Soon, Sweet Lips ❤️ 🍫`);
     </script>
 
@@ -345,6 +332,30 @@
         runAsync().start();
       })();
       document.addEventListener("DOMContentLoaded", function () {
+        var lines = config.lines;
+        var delay = 1000;
+        var container = document.getElementById("code");
+        var button = document.querySelector(".marry");
+
+        function addLine(index) {
+          if (index < lines.length) {
+            var line = document.createElement("span");
+            line.className = "say";
+            line.innerHTML = lines[index] + "<br>";
+            container.appendChild(line);
+
+            // Schedule the next line
+            setTimeout(function () {
+              addLine(index + 1);
+            }, delay);
+          } else {
+            // All lines have been added, show the button
+            button.style.display = "block";
+          }
+        }
+
+        // Start adding lines
+        addLine(0);
         var imgElement;
         var videoElement;
 
@@ -372,7 +383,19 @@
 
         document
           .querySelector(".button-82-pushable")
-          .addEventListener("click", openOverlay);
+          .addEventListener("click", function () {
+            // Stop the existing audio
+            var existingAudio = document.querySelector(".song-audio-autoplay");
+            existingAudio.pause();
+            existingAudio.currentTime = 0;
+
+            // Play the new audio
+            var szaAudio = document.getElementById("szaAudio");
+            szaAudio.play();
+
+            // Open the overlay
+            openOverlay();
+          });
 
         document.querySelectorAll(".card-footer").forEach(function (element) {
           element.addEventListener("click", function () {

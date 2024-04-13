@@ -150,7 +150,8 @@ a {
         /* justify-content: flex-end; */
         color: crimson;
         background-color: #fff;
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;        width: fit-content;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        width: fit-content;
         margin: 1rem 0rem;
         border-radius: 0.5rem;
         padding: .5rem 0.5rem;
@@ -175,7 +176,7 @@ a {
 }
 
 .marry {
-    display: block;
+    display: none;
     width: 1100px;
     text-align: center;
     margin-top: 25%;
@@ -325,15 +326,12 @@ a {
     width: 100%;
     position: relative;
     background-color: #fff;
-    border: 1px solid #999;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 6px;
+    border-radius: 1rem;
     -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
     box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
     background-clip: padding-box;
     outline: 0;
     text-align: left;
-    padding: 20px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
