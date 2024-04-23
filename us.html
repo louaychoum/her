@@ -248,6 +248,15 @@
         animation-delay: -68s;
       }
     </style>
+    <audio
+      class="song-audio-autoplay"
+      controls
+      loop
+      autoplay
+      style="display: none; visibility: hidden"
+    >
+      <source src="./index_files/sabbFarhety.mp3" type="audio/mp3" />
+    </audio>
   </head>
   <body>
     <img src="./index_files/us/1.jpeg" alt="A cute cat" />
@@ -272,20 +281,9 @@
       </button>
     </div>
   </body>
-  <audio
-    class="song-audio-autoplay"
-    controls
-    loop
-    autoplay
-    style="display: none; visibility: hidden"
-  >
-    <source src="./index_files/SabbFarhety.mp3" type="audio/mp3" />
-  </audio>
   <script>
-    document
-        .querySelector(".marryme")
-        .addEventListener("click", function () {
-          window.location.href = 'index.html';
-        });
+    document.querySelector(".marryme").addEventListener("click", function () {
+      window.location.href = "index.html";
+    });
   </script>
 </html>
