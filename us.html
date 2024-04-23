@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Us ❤️</title>
+    <style>
+      :root {
+        --duration: 40s; /* Increased duration for smoother animations */
+        --delay: 40s; /* Increased delay for smoother animations */
+      }
+
+      html {
+        background-image: linear-gradient(
+            rgba(75, 75, 250, 0.3),
+            rgba(75, 75, 250, 0.3)
+          ),
+          url("https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg");
+        background-size: cover;
+        -webkit-animation: slidein 100s;
+        animation: slidein 100s;
+
+        -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+
+        -webkit-animation-iteration-count: infinite;
+        animation-iteration-count: infinite;
+
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+        width: 100vw; /* Full viewport width */
+        height: 100vh;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+      }
+
+      @-webkit-keyframes slidein {
+        from {
+          background-position: top;
+          background-size: 3000px;
+        }
+        to {
+          background-position: -100px 0px;
+          background-size: 2750px;
+        }
+      }
+
+      @keyframes slidein {
+        from {
+          background-position: top;
+          background-size: 3000px;
+        }
+        to {
+          background-position: -100px 0px;
+          background-size: 2750px;
+        }
+      }
+
+      body {
+        position: relative;
+        margin: 0;
+        padding: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+        perspective: 25rem;
+      }
+
+      img {
+        position: absolute;
+        width: 30vw; /* Changed to 20vw for smaller images */
+        box-shadow: 1px 3px 15px rgba(0, 0, 0, 0.5);
+        height: auto;
+        animation: float-up var(--duration) linear infinite;
+      }
+
+      @keyframes float-up {
+        from {
+          transform: translateY(100vh); /* Start off-screen at the bottom */
+        }
+        to {
+          transform: translateY(-100vh); /* End off-screen at the top */
+        }
+      }
+
+      /* Set positions and animation delays for 13 images */
+      img:nth-child(1) {
+        left: 5vw;
+        animation-delay: 0s;
+      }
+
+      img:nth-child(2) {
+        left: 10vw;
+        animation-delay: -5s;
+      }
+
+      img:nth-child(3) {
+        left: 20vw;
+        animation-delay: -9s;
+      }
+
+      img:nth-child(4) {
+        left: 5vw;
+        animation-delay: -15s;
+      }
+
+      img:nth-child(5) {
+        left: 5vw;
+        animation-delay: -22s;
+      }
+
+      img:nth-child(6) {
+        left: 40vw;
+        animation-delay: -19s;
+      }
+
+      img:nth-child(7) {
+        left: 50vw;
+        animation-delay: -30s;
+      }
+
+      img:nth-child(8) {
+        left: 30vw;
+        animation-delay: -35s;
+      }
+
+      img:nth-child(9) {
+        left: 62vw;
+        animation-delay: -39s;
+      }
+
+      img:nth-child(10) {
+        left: 55vw;
+        animation-delay: -46s;
+      }
+
+      img:nth-child(11) {
+        left: 55vw;
+        animation-delay: -27s;
+      }
+
+      img:nth-child(12) {
+        left: 55vw;
+        animation-delay: -55s;
+      }
+
+      img:nth-child(13) {
+        left: 68vw;
+        animation-delay: -63s;
+      }
+      img:nth-child(14) {
+        left: 5vw;
+        animation-delay: -68s;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./index_files/us/1.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/5.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/12.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/2.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/3.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/4.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/5.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/6.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/7.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/8.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/9.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/10.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/11.jpeg" alt="A cute cat" />
+    <img src="./index_files/us/13.jpeg" alt="A cute cat" />
+  </body>
+  <audio
+  class="song-audio-autoplay"
+  controls
+  loop
+  autoplay
+  style="display: none; visibility: hidden"
+>
+  <source src="./index_files/SabbFarhety.mp3" type="audio/mp3" />
+</audio>
+</html>
